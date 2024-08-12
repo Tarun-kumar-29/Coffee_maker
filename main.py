@@ -79,22 +79,19 @@ def make_coffee(name):
 
 
 
-# TODO 1 : ASK THE USER WHAT TO DO
+
 machine_status = True
 while machine_status:
 
     print(logo.logo)
     user_demand = input("what would you like? (espresso/latte/cappuccino):")
-    # TODO 3: PRINT THE REPORT
     if user_demand == "report":
         print(
             f" Water: {resources['water']}ml\n Milk: {resources['milk']}ml\n Coffee: {resources['coffee']}g\n Money: ${resources['money']}\n")
-    # TODO 2 : TURN OFF THE MACHINE
     elif user_demand == "off":
         machine_status = False
         continue
     elif user_demand == "espresso" or user_demand == "latte" or user_demand == "cappuccino":
-        # TODO 4 : CHECK RESOUCES SUFFICEINCY
         if check_resources(user_demand):
             if check_money(user_demand):
                 make_coffee(user_demand)
